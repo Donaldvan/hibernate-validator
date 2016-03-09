@@ -753,7 +753,7 @@
       <tag>HEAD</tag>
   </scm>
 
-    <distributionManagement>
+    <!--distributionManagement>
         <repository>
             <id>jboss-releases-repository</id>
             <name>JBoss Releases Repository</name>
@@ -764,8 +764,43 @@
             <name>JBoss Snapshots Repository</name>
             <url>https://repository.jboss.org/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
-    </distributionManagement>
-
+    </distributionManagement-->
+<distributionManagement>
+  <repository>
+    <id>jboss-releases-repository</id>
+    <url>http://192.168.145.137:8081/nexus/content/repositories/releases/</url>
+  </repository>
+  <snapshotRepository>
+    <id>jboss-snapshots-repository</id>
+    <url>http://192.168.145.137:8081/nexus/content/repositories/snapshots/</url>
+  </snapshotRepository>
+</distributionManagement>
+<repositories>
+    <repository>
+        <id>releases</id>
+        <url>http://192.168.145.137:8081/nexus/content/groups/public/</url>
+        <releases>
+<enabled>true</enabled>
+</releases>
+<snapshots>
+<enabled>true</enabled>
+</snapshots>
+</repository>
+   
+   </repositories>
+<pluginRepositories>
+<pluginRepository>
+<id>releases</id>
+        <url>http://192.168.145.137:8081/nexus/content/groups/public/</url>
+        <releases>
+<enabled>true</enabled>
+</releases>
+<snapshots>
+<enabled>true</enabled>
+</snapshots>
+</pluginRepository>
+</pluginRepositories>
+   
     <profiles>
         <profile>
             <id>docs</id>
